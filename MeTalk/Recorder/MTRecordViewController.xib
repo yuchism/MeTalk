@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTRecordViewController">
+            <connections>
+                <outlet property="bgView" destination="LBT-kL-roR" id="Vtp-wx-Rlg"/>
+                <outlet property="buttonView" destination="wYk-Y4-fV3" id="ayi-6j-Jgh"/>
+                <outlet property="graphView" destination="96o-ym-ECJ" id="psh-x2-zSE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96o-ym-ECJ" customClass="PRCurrentPaceGraphView" customModule="MeTalk" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBT-kL-roR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYk-Y4-fV3" customClass="MTRecordButtonView">
+                            <rect key="frame" x="0.0" y="525" width="600" height="75"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="DTl-7c-OtV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wYk-Y4-fV3" secondAttribute="bottom" id="5t7-cE-DIg"/>
+                        <constraint firstItem="wYk-Y4-fV3" firstAttribute="leading" secondItem="LBT-kL-roR" secondAttribute="leading" id="HO0-0S-Mgy"/>
+                        <constraint firstAttribute="trailing" secondItem="wYk-Y4-fV3" secondAttribute="trailing" id="tbc-d8-Raq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LBT-kL-roR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6De-Nb-pt9"/>
+                <constraint firstItem="LBT-kL-roR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9KK-i4-vC9"/>
+                <constraint firstItem="LBT-kL-roR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A4f-Pt-aVX"/>
+                <constraint firstAttribute="bottom" secondItem="LBT-kL-roR" secondAttribute="bottom" id="E6y-Gn-5w5"/>
+                <constraint firstItem="96o-ym-ECJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JV0-y2-tM1"/>
+                <constraint firstItem="96o-ym-ECJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Obe-NC-dJZ"/>
+                <constraint firstItem="LBT-kL-roR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PRr-EL-SAo"/>
+                <constraint firstItem="96o-ym-ECJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCS-LB-gBc"/>
+                <constraint firstAttribute="trailing" secondItem="LBT-kL-roR" secondAttribute="trailing" id="jNi-bz-6L4"/>
+                <constraint firstItem="96o-ym-ECJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="yBT-4V-Ffg"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
