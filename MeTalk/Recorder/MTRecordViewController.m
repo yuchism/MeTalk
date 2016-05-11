@@ -14,7 +14,6 @@
 #import "MTAudio.h"
 #import "MTIdGenerator.h"
 #import "UCPlotView.h"
-#import "MTRecordButton.h"
 #import "MeTalk-swift.h"
 
 
@@ -78,7 +77,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    [self.graphView setNeedsUpdateConstraints];
+//    [self.graphView setNeedsUpdateConstraints];
 
 }
 

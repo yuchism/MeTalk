@@ -28,7 +28,7 @@
                         <constraint firstItem="zYh-oE-Ldc" firstAttribute="width" secondItem="LX5-ad-X2w" secondAttribute="width" id="qYs-wE-sKV"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atx-g9-UZa" customClass="MTRecordButton">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atx-g9-UZa" customClass="MTRecordButton" customModule="MeTalk" customModuleProvider="target">
                     <rect key="frame" x="250" y="6" width="63" height="62"/>
                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
