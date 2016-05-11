@@ -15,6 +15,4 @@
 #import "UCPlotView.h"
 #import "DefaultGroup.h"
 
-#import "MTHistorySectionHeaderView.h"
-
 #endif /* MTAudioPlayerViewController_Swift_h */

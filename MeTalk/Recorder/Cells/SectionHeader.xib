@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MTHistorySectionHeaderView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MTHistorySectionHeaderView" customModule="MeTalk" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="330" height="54"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -38,7 +38,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="lblTitle" destination="T2p-Lv-Lza" id="DgC-ww-H76"/>
+                <outlet property="lblTitle" destination="T2p-Lv-Lza" id="khd-36-bii"/>
             </connections>
             <point key="canvasLocation" x="22" y="-510"/>
         </view>

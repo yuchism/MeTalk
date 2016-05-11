@@ -36,13 +36,13 @@
 		1133BDAB1C87012F00A153D1 /* MTDuration.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133BDA81C87012F00A153D1 /* MTDuration.m */; };
 		1133BDAC1C87012F00A153D1 /* MTIdGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133BDAA1C87012F00A153D1 /* MTIdGenerator.m */; };
 		116720901CACEE4000198809 /* MTHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1167208E1CACEE4000198809 /* MTHistoryViewController.xib */; };
+		117EA37F1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EA37E1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift */; };
 		11A207DD1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DB1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift */; };
 		11A207DE1CE2584300E6C1CA /* MeTalkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DC1CE2584300E6C1CA /* MeTalkMedia.swift */; };
 		11A207E01CE2966400E6C1CA /* MTHistoryDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DF1CE2966400E6C1CA /* MTHistoryDataController.swift */; };
 		11A207E21CE2A04B00E6C1CA /* MTHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207E11CE2A04B00E6C1CA /* MTHistoryViewController.swift */; };
 		11A207E41CE2B73C00E6C1CA /* MTAudioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207E31CE2B73C00E6C1CA /* MTAudioTableViewCell.swift */; };
 		11CE9D2B1CD0DD950024F544 /* MTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE9D2A1CD0DD950024F544 /* MTUtils.m */; };
-		11CE9D331CD0ECA30024F544 /* MTHistorySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CE9D321CD0ECA30024F544 /* MTHistorySectionHeaderView.m */; };
 		11CE9D351CD0ECFC0024F544 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CE9D341CD0ECFC0024F544 /* SectionHeader.xib */; };
 		11CE9D401CD0F9660024F544 /* MTAudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CE9D3E1CD0F9660024F544 /* MTAudioPlayerViewController.swift */; };
 		11CE9D411CD0F9660024F544 /* MTAudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CE9D3F1CD0F9660024F544 /* MTAudioPlayerViewController.xib */; };
@@ -125,6 +125,7 @@
 		1133BDA91C87012F00A153D1 /* MTIdGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIdGenerator.h; sourceTree = "<group>"; };
 		1133BDAA1C87012F00A153D1 /* MTIdGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTIdGenerator.m; sourceTree = "<group>"; };
 		1167208E1CACEE4000198809 /* MTHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHistoryViewController.xib; sourceTree = "<group>"; };
+		117EA37E1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHistorySectionHeaderView.swift; sourceTree = "<group>"; };
 		11A207DB1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MeTalkMedia+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11A207DC1CE2584300E6C1CA /* MeTalkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTalkMedia.swift; sourceTree = "<group>"; };
 		11A207DF1CE2966400E6C1CA /* MTHistoryDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHistoryDataController.swift; sourceTree = "<group>"; };
@@ -132,8 +133,6 @@
 		11A207E31CE2B73C00E6C1CA /* MTAudioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAudioTableViewCell.swift; sourceTree = "<group>"; };
 		11CE9D291CD0DD950024F544 /* MTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTUtils.h; sourceTree = "<group>"; };
 		11CE9D2A1CD0DD950024F544 /* MTUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTUtils.m; sourceTree = "<group>"; };
-		11CE9D311CD0ECA30024F544 /* MTHistorySectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHistorySectionHeaderView.h; sourceTree = "<group>"; };
-		11CE9D321CD0ECA30024F544 /* MTHistorySectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHistorySectionHeaderView.m; sourceTree = "<group>"; };
 		11CE9D341CD0ECFC0024F544 /* SectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		11CE9D3E1CD0F9660024F544 /* MTAudioPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTAudioPlayerViewController.swift; sourceTree = "<group>"; };
 		11CE9D3F1CD0F9660024F544 /* MTAudioPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTAudioPlayerViewController.xib; sourceTree = "<group>"; };
@@ -255,8 +254,7 @@
 			children = (
 				11A207E31CE2B73C00E6C1CA /* MTAudioTableViewCell.swift */,
 				112948331C8D4C9400F86DEB /* MTAudioTableViewCell.xib */,
-				11CE9D311CD0ECA30024F544 /* MTHistorySectionHeaderView.h */,
-				11CE9D321CD0ECA30024F544 /* MTHistorySectionHeaderView.m */,
+				117EA37E1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift */,
 				11CE9D341CD0ECFC0024F544 /* SectionHeader.xib */,
 			);
 			path = Cells;
@@ -682,10 +680,10 @@
 				11A207E41CE2B73C00E6C1CA /* MTAudioTableViewCell.swift in Sources */,
 				11CE9D441CD23AEF0024F544 /* MTAudioPlayer.swift in Sources */,
 				112948261C8BF2FC00F86DEB /* MTRecordButtonView.m in Sources */,
+				117EA37F1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift in Sources */,
 				11D481B11CBFF46B00322974 /* MTMainViewController.m in Sources */,
 				11CE9D401CD0F9660024F544 /* MTAudioPlayerViewController.swift in Sources */,
 				11A207DD1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift in Sources */,
-				11CE9D331CD0ECA30024F544 /* MTHistorySectionHeaderView.m in Sources */,
 				1133BDA51C8700A700A153D1 /* NSMutableDictionary+Validation.m in Sources */,
 				112CB1A41C854DC8003FFBC8 /* main.m in Sources */,
 				1129481A1C8BE77100F86DEB /* MTAudio.m in Sources */,
