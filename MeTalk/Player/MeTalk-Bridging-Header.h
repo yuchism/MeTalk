@@ -12,8 +12,7 @@
 #import "UCPlotView.h"
 #import "MTAudio.h"
 #import "MTUtils.h"
-#import "MTAudioTableViewCell.h"
-
+#import "UCPlotView.h"
 #import "DefaultGroup.h"
 
 #import "MTHistorySectionHeaderView.h"
