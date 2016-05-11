@@ -16,7 +16,6 @@
 		112948131C8BCDCD00F86DEB /* DefaultGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 112948121C8BCDCD00F86DEB /* DefaultGroup.m */; };
 		112948161C8BCE1200F86DEB /* IndexedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 112948151C8BCE1200F86DEB /* IndexedItems.m */; };
 		1129481A1C8BE77100F86DEB /* MTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 112948191C8BE77100F86DEB /* MTAudio.m */; };
-		112948261C8BF2FC00F86DEB /* MTRecordButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 112948251C8BF2FC00F86DEB /* MTRecordButtonView.m */; };
 		112948281C8BF31400F86DEB /* MTRecordButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112948271C8BF31400F86DEB /* MTRecordButtonView.xib */; };
 		1129482B1C8BF7A100F86DEB /* MTRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1129482A1C8BF7A100F86DEB /* MTRecordButton.m */; };
 		112948351C8D4C9400F86DEB /* MTAudioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112948331C8D4C9400F86DEB /* MTAudioTableViewCell.xib */; };
@@ -37,6 +36,7 @@
 		1133BDAC1C87012F00A153D1 /* MTIdGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1133BDAA1C87012F00A153D1 /* MTIdGenerator.m */; };
 		116720901CACEE4000198809 /* MTHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1167208E1CACEE4000198809 /* MTHistoryViewController.xib */; };
 		117EA37F1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EA37E1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift */; };
+		117EA3811CE2BCB4009F9B5C /* MTRecordButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117EA3801CE2BCB4009F9B5C /* MTRecordButtonView.swift */; };
 		11A207DD1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DB1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift */; };
 		11A207DE1CE2584300E6C1CA /* MeTalkMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DC1CE2584300E6C1CA /* MeTalkMedia.swift */; };
 		11A207E01CE2966400E6C1CA /* MTHistoryDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A207DF1CE2966400E6C1CA /* MTHistoryDataController.swift */; };
@@ -89,8 +89,6 @@
 		112948151C8BCE1200F86DEB /* IndexedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexedItems.m; sourceTree = "<group>"; };
 		112948181C8BE77100F86DEB /* MTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAudio.h; sourceTree = "<group>"; };
 		112948191C8BE77100F86DEB /* MTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAudio.m; sourceTree = "<group>"; };
-		112948241C8BF2FC00F86DEB /* MTRecordButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRecordButtonView.h; sourceTree = "<group>"; };
-		112948251C8BF2FC00F86DEB /* MTRecordButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRecordButtonView.m; sourceTree = "<group>"; };
 		112948271C8BF31400F86DEB /* MTRecordButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTRecordButtonView.xib; sourceTree = "<group>"; };
 		112948291C8BF7A100F86DEB /* MTRecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRecordButton.h; sourceTree = "<group>"; };
 		1129482A1C8BF7A100F86DEB /* MTRecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRecordButton.m; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 		1133BDAA1C87012F00A153D1 /* MTIdGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTIdGenerator.m; sourceTree = "<group>"; };
 		1167208E1CACEE4000198809 /* MTHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHistoryViewController.xib; sourceTree = "<group>"; };
 		117EA37E1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHistorySectionHeaderView.swift; sourceTree = "<group>"; };
+		117EA3801CE2BCB4009F9B5C /* MTRecordButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRecordButtonView.swift; sourceTree = "<group>"; };
 		11A207DB1CE2584300E6C1CA /* MeTalkMedia+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MeTalkMedia+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11A207DC1CE2584300E6C1CA /* MeTalkMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTalkMedia.swift; sourceTree = "<group>"; };
 		11A207DF1CE2966400E6C1CA /* MTHistoryDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTHistoryDataController.swift; sourceTree = "<group>"; };
@@ -238,8 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				11F4C3FE1CA246730042E5A6 /* Graph */,
-				112948241C8BF2FC00F86DEB /* MTRecordButtonView.h */,
-				112948251C8BF2FC00F86DEB /* MTRecordButtonView.m */,
+				117EA3801CE2BCB4009F9B5C /* MTRecordButtonView.swift */,
 				112948271C8BF31400F86DEB /* MTRecordButtonView.xib */,
 				112948291C8BF7A100F86DEB /* MTRecordButton.h */,
 				1129482A1C8BF7A100F86DEB /* MTRecordButton.m */,
@@ -676,10 +674,10 @@
 				112CB1A71C854DC8003FFBC8 /* AppDelegate.m in Sources */,
 				11A207E01CE2966400E6C1CA /* MTHistoryDataController.swift in Sources */,
 				11A207E21CE2A04B00E6C1CA /* MTHistoryViewController.swift in Sources */,
+				117EA3811CE2BCB4009F9B5C /* MTRecordButtonView.swift in Sources */,
 				11F4C4131CA34B140042E5A6 /* PRActivityStartButton.m in Sources */,
 				11A207E41CE2B73C00E6C1CA /* MTAudioTableViewCell.swift in Sources */,
 				11CE9D441CD23AEF0024F544 /* MTAudioPlayer.swift in Sources */,
-				112948261C8BF2FC00F86DEB /* MTRecordButtonView.m in Sources */,
 				117EA37F1CE2BB1C009F9B5C /* MTHistorySectionHeaderView.swift in Sources */,
 				11D481B11CBFF46B00322974 /* MTMainViewController.m in Sources */,
 				11CE9D401CD0F9660024F544 /* MTAudioPlayerViewController.swift in Sources */,

@@ -14,5 +14,6 @@
 #import "MTUtils.h"
 #import "UCPlotView.h"
 #import "DefaultGroup.h"
+#import "MTRecordButton.h"
 
 #endif /* MTAudioPlayerViewController_Swift_h */
