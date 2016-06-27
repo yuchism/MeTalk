@@ -32,10 +32,9 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
     self.viewType = MTViewTypeRecorder;
 
+//    [self.navigationController.navigationBar setHidden:YES];
     // Do any additional setup after loading the view.
 }
 

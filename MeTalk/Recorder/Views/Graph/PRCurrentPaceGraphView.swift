@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 
+@IBDesignable
 class PRCurrentPaceGraphView: UIView {
     
     lazy var baseLayer:CAGradientLayer = {
@@ -28,8 +29,8 @@ class PRCurrentPaceGraphView: UIView {
     }()
     
     
-    var targetPoint:CGPoint
-    var value:Double
+    @IBInspectable var targetPoint:CGPoint
+    @IBInspectable var value:Double
     
     lazy var shadows:Array<CALayer> = {
         return Array<CALayer>();
@@ -68,7 +69,9 @@ class PRCurrentPaceGraphView: UIView {
     }
     
     func centerPoint() -> CGPoint {
-        return CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) * 8/10)
+    
+        let point = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) * 10/8)
+        return point
     }
     
     
@@ -116,12 +119,7 @@ class PRCurrentPaceGraphView: UIView {
         CATransaction.begin()
         
         self.stopAnimation()
-        
-        self.baseLayer.position = self.centerPoint()
-        self.shadow1.position = self.centerPoint()
-        self.shadow2.position = self.centerPoint()
-        self.shadow3.position = self.centerPoint()
-        
+    
         self.targetPoint = (self.baseLayer.valueForKey("position")?.CGPointValue())!
 
         
@@ -130,7 +128,11 @@ class PRCurrentPaceGraphView: UIView {
         self.shadow2.frame =  CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
         self.shadow3.frame =  CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
 
-        
+        self.baseLayer.position = self.centerPoint()
+        self.shadow1.position = self.centerPoint()
+        self.shadow2.position = self.centerPoint()
+        self.shadow3.position = self.centerPoint()
+
         self.startAnimation()
         
         CATransaction.commit()
@@ -143,7 +145,9 @@ class PRCurrentPaceGraphView: UIView {
 
         let height = CGRectGetHeight(self.bounds)
         
-        var pointY:CGFloat = self.centerPoint().y - (CGFloat(self.value) * CGRectGetWidth(self.bounds) / 4)
+        var pointY:CGFloat = self.centerPoint().y - (CGFloat(value) * CGRectGetHeight(self.bounds) / 5)
+        
+        print("\(height),\(pointY)")
         
         if pointY > (height * 3/2) {
             pointY = height * 3/2
@@ -152,6 +156,10 @@ class PRCurrentPaceGraphView: UIView {
             pointY = -1 * (height / 2)
         }
 
+        print("height : \(height),pointY : \(pointY)")
+        print(NSStringFromCGPoint(self.centerPoint()))
+        print(NSStringFromCGRect(self.frame))
+        
         self.targetPoint = CGPointMake(self.centerPoint().x, pointY)
     }
     
@@ -214,10 +222,6 @@ class PRCurrentPaceGraphView: UIView {
         wave.beginTime = self.baseLayer.convertTime(CACurrentMediaTime(), fromLayer: nil) + timeOffset
         layer.addAnimation(wave, forKey:name)
         
-        print(NSStringFromCGPoint(layer.position))
-        
-        print(NSStringFromCGPoint(self.centerPoint()))
-        print(NSStringFromCGRect(self.bounds))
 
     }
     
@@ -244,7 +248,6 @@ class PRCurrentPaceGraphView: UIView {
         }
         
         
-    
     }
 
 }

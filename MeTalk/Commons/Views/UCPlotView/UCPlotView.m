@@ -19,7 +19,6 @@ typedef enum {
     UCPlotDirectionRightToLeft,
 } UCPlotDirection;
 
-
 @implementation NSArray(Reverse)
 
 - (NSArray *)reversedArray {

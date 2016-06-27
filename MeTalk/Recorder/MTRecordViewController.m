@@ -18,14 +18,16 @@
 
 
 
+IB_DESIGNABLE
 @interface MTRecordViewController()
 <MTRecorderControllerDelegate>
 {
     
 }
 
+@property (weak, nonatomic) IBOutlet MTRecordButton *recordButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
-@property (weak, nonatomic) IBOutlet MTRecordButtonView *buttonView;
 @property (weak, nonatomic) IBOutlet PRCurrentPaceGraphView *graphView;
 @property(nonatomic) MTRecorderController *recorder;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
@@ -40,7 +42,10 @@
     
     
     UIImageView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg"]];
+    view.frame = self.view.bounds;
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     view.contentMode = UIViewContentModeScaleAspectFit;
+    
     [self.view addSubview:view];
     [self.view sendSubviewToBack:view];
     
@@ -51,9 +56,8 @@
     [self.graphView setBackgroundColor:[UIColor clearColor]];
     [self.view setBackgroundColor:ColorFromRGBA(0x32, 0x32, 0x32,0.7)];
     [self.bgView setBackgroundColor:ColorFromRGBA(0x32, 0x32, 0x32,0.1)];
-    [self.buttonView setBackgroundColor:ColorFromRGBA(0x32, 0x32, 0x32, 1.0)];
-    [self.buttonView.recordButton addTarget:self action:@selector(actionTouchDown:) forControlEvents:UIControlEventTouchDown];
-    [self.buttonView.recordButton addTarget:self action:@selector(actionTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+    [self.recordButton addTarget:self action:@selector(actionTouchDown:) forControlEvents:UIControlEventTouchDown];
+    [self.recordButton addTarget:self action:@selector(actionTouchUp:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -77,8 +81,6 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-//    [self.graphView setNeedsUpdateConstraints];
-
 }
 
 
@@ -86,20 +88,18 @@
 
 - (void)shouldFinishRecording:(MTRecorderController *)controller
 {
-    [self.buttonView.recordButton setEnabled:NO];
+    [self.recordButton setEnabled:NO];
 }
 
 - (void)recorder:(MTRecorderController *)controller didErrorOccur:(NSError *)error
 {
-    [self.buttonView.recordButton setEnabled:YES];
-    [self.buttonView.plotView reset];
+    [self.recordButton setEnabled:YES];
     [self.recorder reset];
 }
 
 - (void)recorder:(MTRecorderController *)controller didFinishRecording:(NSURL *)fileURL duration:(NSNumber *)duration peaks:(NSArray *)peaks
 {
-    [self.buttonView.recordButton setEnabled:YES];
-    [self.buttonView.plotView reset];
+    [self.recordButton setEnabled:YES];
     [self.recorder reset];
     
 
@@ -122,15 +122,21 @@
     
     playerVC.onAudioPlayFinished = ^(){
         [weakSelf dismissViewControllerAnimated:NO completion:^{
-            
+            [weakSelf.graphView movePosition:0.0f];
         }];
+    
+        NSLog(@"%@,%@",NSStringFromCGRect(self.view.frame),NSStringFromCGRect(self.graphView.frame));
+    
     };
+    
+    
     
     
 }
 - (void)recorder:(MTRecorderController *)controller duration:(NSNumber *)duration averagePower:(NSNumber *)average peekPower:(NSNumber *)peek
 {
-    [self.buttonView.plotView addCurrentPeak:average];
+
+    
     [self.graphView movePosition:[average doubleValue]];
 }
 @end

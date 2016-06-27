@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class MTAudioTableViewCell: UITableViewCell {
 
     @IBOutlet weak var plotView: UCPlotView!

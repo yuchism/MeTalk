@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class MTRecordButtonView: UIView {
 
     @IBOutlet weak var recordButton: MTRecordButton!

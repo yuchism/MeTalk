@@ -12,7 +12,6 @@ import UIKit
 @objc class MTAudioPlayerViewController: UIViewController {
 
     @IBOutlet weak var plotView: UCPlotView!
-    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var lblProgress: UILabel!
     @IBOutlet weak var lblEnd: UILabel!
 
@@ -62,12 +61,9 @@ import UIKit
         
         self.player.play(audioData!);
         self.plotView.setPeeks(self.audio?.audioPeaks);
-        self.lblEnd.text = ""
+        self.lblEnd.text = "\(self.audio!.duration)"
         
         player.onAudioStart = { [unowned self] () -> Void in
-            self.slider.maximumValue = 1.0;
-            self.slider.minimumValue = 0.0;
-            self.slider.value = 0.0;
             
             if self.onAudioPlayStart != nil {
                 self.onAudioPlayStart!()
@@ -78,15 +74,13 @@ import UIKit
 
             let progress:Double = current!/duration!;
             
-            self.lblProgress.text = ""
+            self.lblProgress.text = "\(current!)"
             
-            self.slider.value = Float(progress);
             self.plotView.progress = CGFloat(progress);
             
         };
 
         player.onAudioFinish = { [unowned self] () -> Void in
-            self.slider.value = 1.0
             
             if self.onAudioPlayFinished != nil {
                 self.onAudioPlayFinished!()

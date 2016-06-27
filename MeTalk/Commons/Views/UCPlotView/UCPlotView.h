@@ -13,6 +13,7 @@ typedef enum {
     UCPlotViewModeMetering,
 } UCPlotViewMode;
 
+IB_DESIGNABLE
 @interface UCPlotView : UIView
 
 - (void) addCurrentPeak:(NSNumber *)number;

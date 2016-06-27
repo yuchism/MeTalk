@@ -21,11 +21,15 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
     var player:AVAudioPlayer?
     var timer:NSTimer?
     
+
+
+    
     
     internal func play(data:NSData?)->Void {
         
         do
         {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
             try player = AVAudioPlayer(data: data!)
             
             if self.onAudioStart != nil {
