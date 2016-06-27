@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+@IBDesignable
 class MTRecordButton: UIButton {
 
     override var highlighted: Bool {
@@ -17,16 +19,13 @@ class MTRecordButton: UIButton {
     }
     
     override init(frame: CGRect) {
-        
         super.init(frame: frame)
-        
         self.initialize()
 
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
         self.initialize()
     }
 

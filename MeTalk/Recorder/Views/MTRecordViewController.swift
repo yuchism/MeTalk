@@ -48,18 +48,53 @@ extension MTRecordViewController:MTRecorderControllerDelegate
 
 
 class MTRecordViewController: UIViewController {
-
+    
     @IBOutlet weak var bgImageView: UIImageView! {
         didSet {
             bgImageView.contentMode = .ScaleAspectFill
             bgImageView.image = UIImage(named: "bg")
+            
+            
+            let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
+            horizontalMotionEffect.minimumRelativeValue = -50
+            horizontalMotionEffect.maximumRelativeValue = 50
+            
+            let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
+            verticalMotionEffect.minimumRelativeValue = -50
+            verticalMotionEffect.maximumRelativeValue = 50
+            
+            let effectGroup = UIMotionEffectGroup()
+            effectGroup.motionEffects = [horizontalMotionEffect,verticalMotionEffect]
+            
+            bgImageView.addMotionEffect(effectGroup)
+            
+            
         }
     }
 
+    @IBOutlet weak var btnHistory: UIButton! {
+        
+        didSet {
+            
+            
+            btnHistory.addTarget(self, action: #selector(self.actionHistory), forControlEvents:.TouchUpInside)
+            
+        }
+    }
+    
+    func actionHistory() -> Void {
+        
+        performSegueWithIdentifier("showHistory", sender: self);
+    
+    }
+    
+    
+    
     @IBOutlet weak var recordButton: MTRecordButton! {
         didSet {
             recordButton.addTarget(self, action: #selector(self.actionTouchDown(_:)), forControlEvents: .TouchDown)
             recordButton.addTarget(self, action: #selector(self.actionTouchUp(_:)), forControlEvents: .TouchUpInside)
+   
         }
     }
     
@@ -95,6 +130,8 @@ class MTRecordViewController: UIViewController {
     //view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = true
+
         self.view.backgroundColor = UIColor.colorRGB(0x32, 0x32, 0x32, 0.7)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.enterForeground(_:)), name: UIApplicationWillEnterForegroundNotification , object: nil)
         
@@ -103,6 +140,8 @@ class MTRecordViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         graphView.startAnimation()
+        self.navigationController?.navigationBar.hidden = true
+
     }
     
     override func viewWillDisappear(animated: Bool) {

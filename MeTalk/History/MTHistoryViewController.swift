@@ -21,6 +21,7 @@ class MTHistoryViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView .registerNib(UINib.init(nibName: "MTAudioTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.tableView .registerNib(UINib.init(nibName: "SectionHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: headerIdentifier)
     
@@ -39,6 +40,12 @@ class MTHistoryViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.hidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
