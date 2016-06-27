@@ -21,9 +21,6 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
     var player:AVAudioPlayer?
     var timer:NSTimer?
     
-
-
-    
     
     internal func play(data:NSData?)->Void {
         
@@ -31,7 +28,7 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
         {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
             try player = AVAudioPlayer(data: data!)
-            
+        
             if self.onAudioStart != nil {
                 self.onAudioStart!();
             }
@@ -54,7 +51,7 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
     private func startTimer()->Void {
         
         self.stopTimer();
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:#selector(MTAudioPlayer.tick), userInfo: nil, repeats:true);
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector:#selector(self.tick), userInfo: nil, repeats:true);
         
     }
     
@@ -64,11 +61,15 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
     }
     
     
-    @objc private func tick() -> Void {
+    func tick() -> Void {
         if self.onAudioProgress != nil {
             self.onAudioProgress!(self.player?.duration,self.player?.currentTime);
         }
         
+    }
+    
+    func duration() -> NSTimeInterval {
+        return self.player?.duration ?? 0
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {

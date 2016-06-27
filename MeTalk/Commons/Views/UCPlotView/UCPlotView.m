@@ -59,8 +59,8 @@ typedef enum {
 @end
 
 
-#define kLineOffset 2.0f
-#define kLineWidth 4.0f
+#define kLineOffset 1.0f
+#define kLineWidth 2.0f
 #define kMinimumHeight .5f
 
 @interface UCPlotView()

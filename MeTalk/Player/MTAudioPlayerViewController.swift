@@ -36,11 +36,10 @@ import UIKit
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.view.backgroundColor = UIColor.clearColor();
+
+        self.view.backgroundColor = UIColor.colorRGB(0x99, 0x99, 0x99, 0.2);
         self.plotView.mode = UCPlotViewModeProgress
-        self.plotView.progressColor = UIColor.redColor()
+        self.plotView.progressColor = UIColor.colorRGB(0xAA, 0x44, 0x44)
         // Do any additional setup after loading the view.
         self.initPlayer();
         
@@ -61,8 +60,8 @@ import UIKit
         
         self.player.play(audioData!);
         self.plotView.setPeeks(self.audio?.audioPeaks);
-        self.lblEnd.text = "\(self.audio!.duration)"
-        
+        self.lblEnd.text = MTUtils.durationToString(CGFloat((self.player.duration()) ?? 0))
+                
         player.onAudioStart = { [unowned self] () -> Void in
             
             if self.onAudioPlayStart != nil {
@@ -74,8 +73,7 @@ import UIKit
 
             let progress:Double = current!/duration!;
             
-            self.lblProgress.text = "\(current!)"
-            
+            self.lblProgress.text = MTUtils.durationToString(CGFloat(current ?? 0))
             self.plotView.progress = CGFloat(progress);
             
         };

@@ -250,8 +250,8 @@
         if(_url && flag && [_delegate respondsToSelector:@selector(recorder:didFinishRecording:duration:peaks:)])
         {
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            CGFloat duration = [_recTimer current];
-
+            NSTimeInterval duration = [_recTimer current];
+            
             if ([[NSThread currentThread] isMainThread])
             {
                 [_delegate recorder:self didFinishRecording:_url duration:@(duration) peaks:peaks];
