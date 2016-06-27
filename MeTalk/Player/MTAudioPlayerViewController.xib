@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTAudioPlayerViewController" customModule="MeTalk" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="51g-Zx-Nty" id="o7l-fF-8Cf"/>
                 <outlet property="lblEnd" destination="ze0-oH-GaI" id="gRD-1N-N8b"/>
                 <outlet property="lblProgress" destination="B2n-fQ-yxZ" id="Ht4-ta-2Ig"/>
                 <outlet property="plotView" destination="v4E-fy-5iD" id="E6V-tf-w8s"/>

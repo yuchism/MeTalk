@@ -11,9 +11,33 @@ import UIKit
 
 @objc class MTAudioPlayerViewController: UIViewController {
 
-    @IBOutlet weak var plotView: UCPlotView!
-    @IBOutlet weak var lblProgress: UILabel!
-    @IBOutlet weak var lblEnd: UILabel!
+    @IBOutlet weak var plotView: UCPlotView! {
+        didSet {
+            plotView.mode = UCPlotViewModeProgress
+            plotView.progressColor = UIColor.colorRGB(0xFF, 0x88, 0x88)
+            plotView.plotBGColor = UIColor.colorRGB(0x44, 0x44, 0x44)
+            
+            plotView.bgView.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var lblProgress: UILabel!  {
+        didSet {
+            lblProgress.textColor = UIColor.colorRGB(0xAA, 0xAA, 0xAA)
+        }
+    }
+    @IBOutlet weak var lblEnd: UILabel! {
+        
+        didSet {
+            lblEnd.textColor = UIColor.colorRGB(0xAA, 0xAA, 0xAA)
+        }
+    }
+    
+    
+    @IBOutlet weak var bgView: UIView! {
+        didSet {
+            bgView.layer.cornerRadius = 10
+        }
+    }
 
     
     internal var onAudioPlayFinished:(()->Void)?
@@ -23,8 +47,6 @@ import UIKit
         return MTAudioPlayer();
     }()
 
-    private var _audio : MTAudio!;
-    
     var audio:MTAudio? {
         set {
             _audio = newValue;
@@ -34,17 +56,35 @@ import UIKit
         }
     }
     
+    private var _audio:MTAudio?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.clearColor()
+        
+        let blurEffect = UIBlurEffect(style: .Dark)
+        let visualEffectView = UIVisualEffectView.init(effect: blurEffect)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.frame = self.view.bounds;
+        visualEffectView.autoresizingMask = [.FlexibleHeight,.FlexibleWidth]
+        self.view.insertSubview(visualEffectView, atIndex: 0)
+        
 
-        self.view.backgroundColor = UIColor.colorRGB(0x99, 0x99, 0x99, 0.2);
-        self.plotView.mode = UCPlotViewModeProgress
-        self.plotView.progressColor = UIColor.colorRGB(0xAA, 0x44, 0x44)
+        let gr = UITapGestureRecognizer(target: self, action: #selector(self.actionTap(_:)))
+        view .addGestureRecognizer(gr)
+        
+        
         // Do any additional setup after loading the view.
         self.initPlayer();
-        
     }
 
+    func actionTap(gr:UITapGestureRecognizer) -> Void {
+        self.player.stop()
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

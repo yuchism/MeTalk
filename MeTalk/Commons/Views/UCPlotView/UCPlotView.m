@@ -73,7 +73,9 @@ typedef enum {
 
     CGFloat _plotWidth;
     CGFloat _plotMargin;
-
+    
+    
+    UIView *_bgView;
     UCPlotDirection _direction;
     UCPlotViewMode _mode;
 }
@@ -90,6 +92,7 @@ typedef enum {
 @synthesize mode = _mode;
 @synthesize plotWidth = _plotWidth;
 @synthesize plotMargin = _plotMargin;
+@synthesize bgView = _bgView;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -100,6 +103,17 @@ typedef enum {
     }
     return self;
 }
+
+- (void) setPlotBGColor:(UIColor *)plotBGColor
+{
+    _bgView.backgroundColor = plotBGColor;
+}
+
+- (UIColor *)plotBGColor
+{
+    return _bgView.backgroundColor;
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -117,6 +131,16 @@ typedef enum {
     _progressColor = UIColorFromRGB(0x00AAE7);
     _plotWidth = kLineWidth;
     _plotMargin = kLineOffset;
+    
+    _bgView = [[UIView alloc] initWithFrame:self.bounds];
+    _bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _bgView.backgroundColor = [UIColor blackColor];
+    
+    
+    [self addSubview:_bgView];
+    
+    self.backgroundColor = [UIColor clearColor];
+    
     
     _queue = [[NSMutableArray alloc] init];
     _progressLayer = nil;

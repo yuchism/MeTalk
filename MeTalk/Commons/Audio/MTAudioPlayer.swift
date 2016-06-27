@@ -22,7 +22,7 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
     var timer:NSTimer?
     
     
-    internal func play(data:NSData?)->Void {
+    func play(data:NSData?)->Void {
         
         do
         {
@@ -46,6 +46,17 @@ class MTAudioPlayer: NSObject,AVAudioPlayerDelegate {
                 self.onAudioError!(error);
             }
         }
+    }
+    
+    func stop() -> Void {
+        
+        self.stopTimer();
+        player?.stop()
+        
+        if self.onAudioFinish != nil {
+            self.onAudioFinish!()
+        }
+        
     }
 
     private func startTimer()->Void {

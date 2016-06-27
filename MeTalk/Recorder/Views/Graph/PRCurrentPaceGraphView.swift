@@ -28,9 +28,15 @@ class PRCurrentPaceGraphView: UIView {
         return CALayer()
     }()
     
+    var on:Bool = true {
+        didSet {
+            self.highlight()
+        }
+    }
     
-    @IBInspectable var targetPoint:CGPoint
-    @IBInspectable var value:Double
+    
+    @IBInspectable var targetPoint:CGPoint = CGPointZero
+    @IBInspectable var value:Double = 0.0
     
     lazy var shadows:Array<CALayer> = {
         return Array<CALayer>();
@@ -41,9 +47,6 @@ class PRCurrentPaceGraphView: UIView {
     }
     
     override init(frame: CGRect) {
-        self.targetPoint = CGPointZero;
-        self.value = 0.0
-        
         super.init(frame: frame)
 
         self.initialize();
@@ -51,9 +54,6 @@ class PRCurrentPaceGraphView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.targetPoint = CGPointZero;
-        self.value = 0.0
-
         super.init(coder: aDecoder)!
 
         self.initialize();
@@ -62,26 +62,51 @@ class PRCurrentPaceGraphView: UIView {
     private func initialize() -> Void {
         self.targetPoint = (self.baseLayer.valueForKey("position")?.CGPointValue())!
         self.createLayers()
-        
+        self.highlight()
         self.startAnimation()
     }
     
     private func centerPoint() -> CGPoint {
-    
         let point = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) * 10/8)
         return point
     }
-    
+
+    private func colorSet() -> (CGColor,CGColor,CGColor,CGColor)
+    {
+        
+        if on == true  {
+            
+            return
+                ( UIColor.colorRGB(0xff, 0x00, 0x00,0.25).CGColor,
+                  UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor,
+                  UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor,
+                  UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor
+            )
+            
+        } else {
+            return
+                ( UIColor.colorRGB(0x22, 0x22, 0x22,0.25).CGColor,
+                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor,
+                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor,
+                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor
+            )
+        }
+    }
+
+    private func highlight() {
+        
+        let sets = colorSet()
+        
+        self.baseLayer.backgroundColor = sets.0
+        self.shadow1.backgroundColor = sets.1
+        self.shadow2.backgroundColor = sets.2
+        self.shadow3.backgroundColor = sets.3
+        
+    }
     
 
     private func createLayers() -> Void {
 
-        self.baseLayer.backgroundColor = UIColor.init(red: 0xff, green: 0x00, blue: 0x00, alpha: 0.25).CGColor
-        
-        self.shadow1.backgroundColor = UIColor.init(red: 0xff, green: 0x00, blue: 0x00, alpha: 0.15).CGColor;
-        self.shadow2.backgroundColor = UIColor.init(red: 0xff, green: 0x00, blue: 0x00, alpha: 0.15).CGColor;
-        self.shadow3.backgroundColor = UIColor.init(red: 0xff, green: 0x00, blue: 0x00, alpha: 0.15).CGColor;
-        
         self.layer.addSublayer(self.shadow3)
         self.layer.addSublayer(self.shadow2)
         self.layer.addSublayer(self.shadow1)

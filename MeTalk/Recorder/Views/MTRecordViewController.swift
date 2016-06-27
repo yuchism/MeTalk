@@ -23,6 +23,7 @@ extension MTRecordViewController:MTRecorderControllerDelegate
     
     func recorder(controller: MTRecorderController!, duration: NSNumber!, averagePower average: NSNumber!, peekPower peek: NSNumber!) {
         graphView.movePosition(average.doubleValue)
+        
     }
 
     func recorder(controller: MTRecorderController!, didFinishRecording fileURL: NSURL!, duration: NSNumber!, peaks peeks: [AnyObject]!) {
@@ -50,7 +51,7 @@ class MTRecordViewController: UIViewController {
 
     @IBOutlet weak var bgImageView: UIImageView! {
         didSet {
-            bgImageView.contentMode = .ScaleAspectFit
+            bgImageView.contentMode = .ScaleAspectFill
             bgImageView.image = UIImage(named: "bg")
         }
     }
@@ -64,13 +65,16 @@ class MTRecordViewController: UIViewController {
     
     @IBOutlet weak var bgView: UIView! {
         didSet {
-            bgView.backgroundColor = UIColor.colorRGB(0x32, 0x32, 0x32, 0.1)
+            bgView.backgroundColor = UIColor.colorRGB(0x32, 0x32, 0x32, 0.5)
+            
         }
         
     }
     @IBOutlet weak var graphView: PRCurrentPaceGraphView! {
         didSet {
             graphView.backgroundColor = UIColor.clearColor()
+            graphView.on = false
+            
         }
     }
     
@@ -105,17 +109,20 @@ class MTRecordViewController: UIViewController {
         super.viewWillDisappear(animated)
         graphView.stopAnimation()
     }
-    
+        
     func enterForeground(noti:NSNotification) {
-        graphView .startAnimation()
+        graphView.startAnimation()
     }
     
     func actionTouchDown(button:MTRecordButton) {
         recorder.start()
+        graphView.on = true
+        
     }
 
     func actionTouchUp(button:MTRecordButton) {
         recorder.stop()
+        graphView.on = false
     }
     
     func playAudio(audio:MTAudio) -> Void {

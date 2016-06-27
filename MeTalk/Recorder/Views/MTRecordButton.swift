@@ -33,7 +33,7 @@ class MTRecordButton: UIButton {
     
     private func initialize() -> Void {
         self.layer.borderColor = UIColor.blackColor().CGColor;
-        self.layer.backgroundColor = UIColor.redColor().CGColor;
+        self.layer.backgroundColor = UIColor.colorRGB(0x44, 0x66, 0x77).CGColor;
         
         self.setImage(UIImage(named:"audioBtnRecording"), forState: .Normal)
         
