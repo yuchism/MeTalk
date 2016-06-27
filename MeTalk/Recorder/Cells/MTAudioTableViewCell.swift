@@ -18,9 +18,13 @@ class MTAudioTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 
-        self.contentView.backgroundColor = UIColor.init(red: 0xf0, green: 0x00, blue: 0x00, alpha: 0.1);
+        
+        
+        
+        self.contentView.backgroundColor = UIColor.colorRGB(0xf0, 0x00, 0x00,0.1)
         self.plotView.backgroundColor = UIColor.clearColor()
-        self.plotView.plotColor = UIColor.init(red: 0x9c, green: 0x00, blue: 0x00, alpha: 0.9);
+        self.plotView.plotColor = UIColor.colorRGB(0x9c, 0x00, 0x00,0.9)
+        
         self.plotView.plotWidth = 2.0
         self.plotView.mode = UCPlotViewModeProgress
         

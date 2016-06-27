@@ -13,7 +13,7 @@ class MTHistorySectionHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var lblTitle: UILabel!
 
     override func awakeFromNib() {
-        self.lblTitle.textColor = UIColor.init(red: 0x00, green: 0x00, blue: 0x00, alpha: 0.5)
+        self.lblTitle.textColor = UIColor.colorRGB(0x00, 0x00, 0x00,0.5)
     }
 
     func setTitle(str:String) -> Void {

@@ -96,7 +96,8 @@ class PRActivityStartButton: UIView {
     
     private func createLayer() -> Void {
         baseLayer = CAShapeLayer()
-        baseLayer?.fillColor = UIColor.init(red: 0xff, green: 0xff, blue: 0xff, alpha: 0.75).CGColor
+        baseLayer?.fillColor = UIColor.colorRGB(0xff, 0xff, 0xff,0.75).CGColor
+        
         self.layer.addSublayer(baseLayer!)
     
     }

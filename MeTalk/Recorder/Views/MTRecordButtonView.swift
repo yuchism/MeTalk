@@ -56,8 +56,8 @@ class MTRecordButtonView: UIView {
     private func initialize() -> Void {
         self.plotView.mode = UCPlotViewModeMetering;
         self.plotView.backgroundColor = UIColor.clearColor()
-        self.bgView.backgroundColor = UIColor.init(red: 0x11, green: 0x11, blue: 0x11, alpha: 0.1)
-        self.bgView.backgroundColor = UIColor.redColor()
+        self.bgView.backgroundColor = UIColor.colorRGB(0x11, 0x11, 0x11,0.1)
+        
         self.backgroundColor = UIColor.clearColor()
     }
 

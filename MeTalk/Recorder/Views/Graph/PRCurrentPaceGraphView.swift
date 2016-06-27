@@ -37,9 +37,7 @@ class PRCurrentPaceGraphView: UIView {
     }()
     
     convenience init() {
-
         self.init(frame:CGRect.zero)
-        
     }
     
     override init(frame: CGRect) {
@@ -61,14 +59,14 @@ class PRCurrentPaceGraphView: UIView {
         self.initialize();
     }
     
-    func initialize() -> Void {
+    private func initialize() -> Void {
         self.targetPoint = (self.baseLayer.valueForKey("position")?.CGPointValue())!
         self.createLayers()
         
         self.startAnimation()
     }
     
-    func centerPoint() -> CGPoint {
+    private func centerPoint() -> CGPoint {
     
         let point = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) * 10/8)
         return point
@@ -76,7 +74,7 @@ class PRCurrentPaceGraphView: UIView {
     
     
 
-    func createLayers() -> Void {
+    private func createLayers() -> Void {
 
         self.baseLayer.backgroundColor = UIColor.init(red: 0xff, green: 0x00, blue: 0x00, alpha: 0.25).CGColor
         
@@ -94,7 +92,6 @@ class PRCurrentPaceGraphView: UIView {
         self.shadows.append(self.shadow1)
         self.shadows.append(self.shadow2)
         self.shadows.append(self.shadow3)
-        
         
     }
 
@@ -114,14 +111,13 @@ class PRCurrentPaceGraphView: UIView {
         self.relocateLayer()
     }
     
-    func relocateLayer() -> Void {
+    private func relocateLayer() -> Void {
         
         CATransaction.begin()
         
         self.stopAnimation()
     
         self.targetPoint = (self.baseLayer.valueForKey("position")?.CGPointValue())!
-
         
         self.baseLayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
         self.shadow1.frame =  CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds));
@@ -147,18 +143,12 @@ class PRCurrentPaceGraphView: UIView {
         
         var pointY:CGFloat = self.centerPoint().y - (CGFloat(value) * CGRectGetHeight(self.bounds) / 5)
         
-        print("\(height),\(pointY)")
-        
         if pointY > (height * 3/2) {
             pointY = height * 3/2
         }
         if pointY < -(height / 2) {
             pointY = -1 * (height / 2)
         }
-
-        print("height : \(height),pointY : \(pointY)")
-        print(NSStringFromCGPoint(self.centerPoint()))
-        print(NSStringFromCGRect(self.frame))
         
         self.targetPoint = CGPointMake(self.centerPoint().x, pointY)
     }

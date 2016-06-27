@@ -7,7 +7,6 @@
 //
 
 #import "MTMainViewController.h"
-#import "MTRecordViewController.h"
 
 #import "MeTalk-swift.h"
 
@@ -33,10 +32,11 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewType = MTViewTypeRecorder;
-
+    
 //    [self.navigationController.navigationBar setHidden:YES];
     // Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -52,6 +52,12 @@ typedef enum {
     {
         self.viewType = MTViewTypeHistory;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
 }
 
 
@@ -85,6 +91,8 @@ typedef enum {
     [self.rightButton setImage:[UIImage imageNamed:@"micIcon"]];
     
 }
+
+
 
 
 - (void) _transitionChildViewController:(UIViewController*)newVC

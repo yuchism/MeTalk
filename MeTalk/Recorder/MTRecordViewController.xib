@@ -2,14 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTRecordViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTRecordViewController" customModule="MeTalk" customModuleProvider="target">
             <connections>
-                <outlet property="bgView" destination="LBT-kL-roR" id="Vtp-wx-Rlg"/>
-                <outlet property="graphView" destination="96o-ym-ECJ" id="psh-x2-zSE"/>
-                <outlet property="recordButton" destination="sG7-I6-pWv" id="uMM-mJ-Mfo"/>
+                <outlet property="bgImageView" destination="vTY-Ct-TaH" id="8Xh-pa-bsq"/>
+                <outlet property="bgView" destination="LBT-kL-roR" id="cps-8n-62I"/>
+                <outlet property="graphView" destination="96o-ym-ECJ" id="ztp-FE-to3"/>
+                <outlet property="recordButton" destination="sG7-I6-pWv" id="9Od-cW-OCu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vTY-Ct-TaH">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96o-ym-ECJ" customClass="PRCurrentPaceGraphView" customModule="MeTalk" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,13 +44,17 @@
                 <constraint firstItem="LBT-kL-roR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6De-Nb-pt9"/>
                 <constraint firstItem="LBT-kL-roR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9KK-i4-vC9"/>
                 <constraint firstItem="LBT-kL-roR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A4f-Pt-aVX"/>
+                <constraint firstItem="vTY-Ct-TaH" firstAttribute="width" secondItem="LBT-kL-roR" secondAttribute="width" id="Ddp-kd-vId"/>
                 <constraint firstItem="sG7-I6-pWv" firstAttribute="trailing" secondItem="LBT-kL-roR" secondAttribute="trailing" constant="-40" id="Ddy-i0-twd"/>
                 <constraint firstAttribute="bottom" secondItem="LBT-kL-roR" secondAttribute="bottom" id="E6y-Gn-5w5"/>
                 <constraint firstItem="96o-ym-ECJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JV0-y2-tM1"/>
                 <constraint firstItem="96o-ym-ECJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="Obe-NC-dJZ"/>
                 <constraint firstItem="LBT-kL-roR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PRr-EL-SAo"/>
+                <constraint firstItem="vTY-Ct-TaH" firstAttribute="top" secondItem="LBT-kL-roR" secondAttribute="top" id="Sgb-8k-Npf"/>
                 <constraint firstItem="96o-ym-ECJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCS-LB-gBc"/>
                 <constraint firstAttribute="trailing" secondItem="LBT-kL-roR" secondAttribute="trailing" id="jNi-bz-6L4"/>
+                <constraint firstItem="vTY-Ct-TaH" firstAttribute="leading" secondItem="LBT-kL-roR" secondAttribute="leading" id="jWN-Sh-WCm"/>
+                <constraint firstItem="vTY-Ct-TaH" firstAttribute="height" secondItem="LBT-kL-roR" secondAttribute="height" id="ln0-lJ-XgU"/>
                 <constraint firstItem="sG7-I6-pWv" firstAttribute="bottom" secondItem="LBT-kL-roR" secondAttribute="bottom" constant="-40" id="r4i-Fb-aV4"/>
                 <constraint firstItem="96o-ym-ECJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="yBT-4V-Ffg"/>
             </constraints>

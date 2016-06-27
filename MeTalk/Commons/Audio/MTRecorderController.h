@@ -45,7 +45,6 @@ enum : NSInteger {
 @property(nonatomic) MTRecorderStatus status;
 @property(nonatomic,weak) id<MTRecorderControllerDelegate>delegate;
 @property(nonatomic,strong) NSURL *url;
-
 @end
 
 
