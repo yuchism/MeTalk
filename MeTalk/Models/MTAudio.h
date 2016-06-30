@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "IndexedItems.h"
+#import <CoreLocation/CoreLocation.h>
+
 @class MeTalkMedia;
 
 
@@ -20,6 +22,9 @@
 @property (nonatomic, strong) NSString *filePath;
 @property (nonatomic, strong) NSArray *audioPeaks;
 @property (nonatomic, strong) NSNumber *duration;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) CLLocation *loc;
+@property (nonatomic, strong) NSString *desc;
 
 - (instancetype)initWithMetalkMedia:(MeTalkMedia *)media;
 

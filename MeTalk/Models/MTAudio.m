@@ -34,6 +34,11 @@
         self.audioPeaks = media.getAudioPeeksList;
         self.duration = media.duration;
         
+        self.title = media.title;
+        self.desc = media.desc;
+        self.loc = media.getLocation;
+        
+
         return self;
     }
     return self;

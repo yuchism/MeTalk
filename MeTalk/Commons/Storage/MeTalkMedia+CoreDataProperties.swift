@@ -19,5 +19,7 @@ extension MeTalkMedia {
     @NSManaged var duration: NSNumber?
     @NSManaged var filePath: String?
     @NSManaged var mediaId: String?
-
+    @NSManaged var title:String?
+    @NSManaged var desc:String?
+    @NSManaged var location:NSData?
 }

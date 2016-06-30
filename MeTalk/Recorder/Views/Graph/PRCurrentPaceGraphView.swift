@@ -80,16 +80,14 @@ class PRCurrentPaceGraphView: UIView {
                 ( UIColor.colorRGB(0xff, 0x00, 0x00,0.25).CGColor,
                   UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor,
                   UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor,
-                  UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor
-            )
+                  UIColor.colorRGB(0xff, 0x00, 0x00,0.15).CGColor)
             
         } else {
             return
-                ( UIColor.colorRGB(0x22, 0x22, 0x22,0.25).CGColor,
-                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor,
-                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor,
-                  UIColor.colorRGB(0x22, 0x22, 0x22,0.15).CGColor
-            )
+                ( UIColor.colorRGB(0x00, 0x00, 0x00,0.25).CGColor,
+                  UIColor.colorRGB(0x00, 0x00, 0x00,0.15).CGColor,
+                  UIColor.colorRGB(0x00, 0x00, 0x00,0.15).CGColor,
+                  UIColor.colorRGB(0x00, 0x00, 0x00,0.15).CGColor)
         }
     }
 

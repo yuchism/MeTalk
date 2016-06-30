@@ -43,6 +43,8 @@
 		11AF5E291D20D5D600238D58 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF5E281D20D5D600238D58 /* UIColor+RGB.swift */; };
 		11AF5E2B1D2154B300238D58 /* MTPushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AF5E2A1D2154B300238D58 /* MTPushButton.swift */; };
 		11AF5E2E1D21774F00238D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11AF5E2C1D21774F00238D58 /* Main.storyboard */; };
+		11AF5E301D223D9D00238D58 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AF5E2F1D223D9D00238D58 /* MapKit.framework */; };
+		11AF5E321D223DD800238D58 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11AF5E311D223DD800238D58 /* CoreLocation.framework */; };
 		11C8CD7E1CE2CC5800941D3E /* MTRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8CD7D1CE2CC5800941D3E /* MTRecordButton.swift */; };
 		11C8CD801CE2DF7C00941D3E /* PRActivityStartButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8CD7F1CE2DF7C00941D3E /* PRActivityStartButtonDelegate.swift */; };
 		11C8CD821CE2E07700941D3E /* PRActivityStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8CD811CE2E07700941D3E /* PRActivityStartButton.swift */; };
@@ -129,6 +131,8 @@
 		11AF5E281D20D5D600238D58 /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		11AF5E2A1D2154B300238D58 /* MTPushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTPushButton.swift; sourceTree = "<group>"; };
 		11AF5E2D1D21774F00238D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11AF5E2F1D223D9D00238D58 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		11AF5E311D223DD800238D58 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		11C8CD7D1CE2CC5800941D3E /* MTRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTRecordButton.swift; sourceTree = "<group>"; };
 		11C8CD7F1CE2DF7C00941D3E /* PRActivityStartButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRActivityStartButtonDelegate.swift; sourceTree = "<group>"; };
 		11C8CD811CE2E07700941D3E /* PRActivityStartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRActivityStartButton.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11AF5E321D223DD800238D58 /* CoreLocation.framework in Frameworks */,
+				11AF5E301D223D9D00238D58 /* MapKit.framework in Frameworks */,
 				0D94B111C083ADE128B0E073 /* libPods-MeTalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,8 @@
 		325B0339A184B9B8A01D342B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11AF5E311D223DD800238D58 /* CoreLocation.framework */,
+				11AF5E2F1D223D9D00238D58 /* MapKit.framework */,
 				610FE8141360704DC8FC4DCE /* libPods-MeTalk.a */,
 			);
 			name = Frameworks;
@@ -534,6 +542,11 @@
 					112CB19E1C854DC8003FFBC8 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 8T6F49Q85Q;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					112CB1BA1C854DC8003FFBC8 = {
 						CreatedOnToolsVersion = 7.2;

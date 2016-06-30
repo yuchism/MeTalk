@@ -23,13 +23,29 @@ class MeTalkMedia: NSManagedObject {
         return NSKeyedUnarchiver.unarchiveObjectWithData(self.audioPeeks!)! as! Array<Float>
     }
     
+    func setLocationData(location:AnyObject!) -> Void {
+        self.location = NSKeyedArchiver.archivedDataWithRootObject(location)
+    }
+    
+    func getLocation() -> CLLocation {
+        return NSKeyedUnarchiver.unarchiveObjectWithData(self.location!)! as! CLLocation
+    }
+    
+    
     func setAudio(audio:MTAudio) {
         
-        self.createDate = audio.createDate;
-        self.filePath = audio.filePath;
-        self.mediaId = audio.mediaId;
-        self.duration = audio.duration;
-        self.setAudioPeeksList(audio.audioPeaks)
+        self.createDate = audio.createDate
+        self.filePath = audio.filePath
+        self.mediaId = audio.mediaId
+        self.duration = audio.duration
+        self.title = audio.title ?? "No Title"
+        self.desc = audio.desc ?? ""
+        
+        self.setAudioPeeksList(audio.audioPeaks ?? [])
+        self.setLocationData(audio.loc ?? CLLocation(latitude:0.0, longitude: 0))
+        
+        
+        
     }
     
     
