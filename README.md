@@ -1,11 +1,10 @@
-# MeTalk
-A Simple iOS App. of voice recorder with user location.
+# MeTalk 
+A Simple iOS App. of voice recorder with user location. (.. not complete yet :)
 
-
-<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot1.png" width="320">
-<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot2.png" width="320">
-<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot3.png" width="320">
-<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot4.png" width="320">
+<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot1.png" width="200">
+<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot2.png" width="200">
+<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot3.png" width="200">
+<img src="https://raw.githubusercontent.com/yuchism/MeTalk/master/Screenshot/screenshot4.png" width="200">
 
 
 ## Development Environment.
